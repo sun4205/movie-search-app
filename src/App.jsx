@@ -44,8 +44,6 @@ function App() {
               {movie.Title}({movie.Year})
             </h3>
             <img src={movie.Poster} alt={movie.Title} width="100" />
-            <p>Rating:{movie.imdbRating}</p>
-            <p>Movie:{movie.Plot}</p>
           </div>
         ))}
       </div>
