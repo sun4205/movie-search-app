@@ -27,15 +27,17 @@ function App() {
   return (
     <div className="container">
       <h1 className="title">Movie Search App</h1>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Type a movie title..."
-      />
-      <button className="button" onClick={() => fetchMovies(1)}>
-        Search
-      </button>
+      <div className="search-bar">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Type a movie title..."
+        />
+        <button className="button" onClick={() => fetchMovies(1)}>
+          Search
+        </button>
+      </div>
 
       <div className="movie">
         {movies.map((movie) => (
@@ -43,7 +45,10 @@ function App() {
             <h3>
               {movie.Title}({movie.Year})
             </h3>
-            <img src={movie.Poster} alt={movie.Title} width="100" />
+            <img
+              src={movie.Poster !== "N/A" ? movie.Poster : "placeholder.jpg"}
+              alt={movie.Title}
+            />
           </div>
         ))}
       </div>
